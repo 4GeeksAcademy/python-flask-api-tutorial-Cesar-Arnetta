@@ -5,10 +5,14 @@ app = Flask(__name__)
 # def hello_world():
 #     return "<h1>Hello!</h1>"
 
+# List variablle
+
 todos = [ 
     { "done": True, "label": "Sample Todo 1" },
     { "done": True, "label": "Sample Todo 1" }
          ]
+
+# GET method
 
 @app.route('/todos', methods=['GET'])
 def hello_world():
@@ -20,6 +24,8 @@ def hello_world():
 #     request_body = request.json
 #     print("Incoming request with the following body", request_body)
 #     return 'Response for the POST todo'
+
+# POST method
 
 @app.route('/todos', methods=['POST'])
 def add_new_todo():
@@ -37,6 +43,8 @@ def add_new_todo():
 # def delete_todo(position):
 #     print("This is the position to delete:", position)
 #     return 'something'
+
+# DELETE method
 
 @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
